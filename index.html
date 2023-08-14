@@ -764,7 +764,11 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_Docker_chapter">1. Ceph</a>
 <ul class="sectlevel2">
 <li><a href="#_预设配置">1.1. 预设配置</a></li>
-<li><a href="#_网上拉取ceph镜像文件">1.2. 网上拉取ceph镜像文件</a></li>
+<li><a href="#_使用dnf指令下载时间同步工具">1.2. 使用dnf指令下载时间同步工具、</a></li>
+<li><a href="#_允许系统自启动时间同步工具">1.3. 允许系统自启动时间同步工具</a></li>
+<li><a href="#_网上拉取ceph镜像文件">1.4. 网上拉取ceph镜像文件</a></li>
+<li><a href="#_下载使用podman工具作为容器">1.5. 下载使用podman工具作为容器</a></li>
+<li><a href="#_使用指令下载">1.6. 使用指令下载</a></li>
 </ul>
 </li>
 </ul>
@@ -814,37 +818,52 @@ p { margin-bottom: 1.25rem; }
 192.168.122.201 ceph3
 EOF</p>
 </div>
-<div class="paragraph">
-<p>===使用dnf指令下载时间同步工具、
-dnf install -y systemd-timesyncd</p>
 </div>
+<div class="sect2">
+<h3 id="_使用dnf指令下载时间同步工具">1.2. 使用dnf指令下载时间同步工具、</h3>
 <div class="paragraph">
-<p>===允许系统自启动时间同步工具
-systemctl enable systemd-timesyncd --now</p>
+<p>dnf install -y systemd-timesyncd</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_网上拉取ceph镜像文件">1.2. 网上拉取ceph镜像文件</h3>
+<h3 id="_允许系统自启动时间同步工具">1.3. 允许系统自启动时间同步工具</h3>
+<div class="paragraph">
+<p>systemctl enable systemd-timesyncd --now</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_网上拉取ceph镜像文件">1.4. 网上拉取ceph镜像文件</h3>
 <div class="paragraph">
 <p>rpm -Uvh <a href="https://download.ceph.com/rpm-18.1.3/el9/noarch/ceph-release-1-1.el9.noarch.rpm" class="bare">https://download.ceph.com/rpm-18.1.3/el9/noarch/ceph-release-1-1.el9.noarch.rpm</a></p>
 </div>
+<div class="paragraph">
+<p>可换源</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> vim ins</code></pre>
+</div>
+</div>
 <div class="literalblock">
 <div class="content">
-<pre>可换源
-https://docs.ceph.com/en/latest/install/mirrors/
+<pre>https://docs.ceph.com/en/latest/install/mirrors/
 CN: China: http://mirrors.ustc.edu.cn/ceph/
 sed mirrors.ustc.edu.cn  /etc/yum.repos.d/ceph.repo</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>===下载使用podman工具作为容器
-dnf install -y cephadm podman
-#可换源
-#https://docs.ceph.com/en/latest/cephadm/install/</p>
 </div>
+<div class="sect2">
+<h3 id="_下载使用podman工具作为容器">1.5. 下载使用podman工具作为容器</h3>
 <div class="paragraph">
-<p>==使用指令下载
-dnf install -y centos-release-ceph-pacific</p>
+<p>dnf install -y cephadm podman
+可换源
+<a href="https://docs.ceph.com/en/latest/cephadm/install/" class="bare">https://docs.ceph.com/en/latest/cephadm/install/</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用指令下载">1.6. 使用指令下载</h3>
+<div class="paragraph">
+<p>dnf install -y centos-release-ceph-pacific</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -859,7 +878,7 @@ thrift-0.14.0</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-08-14 08:57:45 +0800
+Last updated 2023-08-14 09:16:46 +0800
 </div>
 </div>
 <script src="js/highlight.min.js"></script>
