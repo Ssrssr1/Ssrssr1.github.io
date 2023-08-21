@@ -765,27 +765,51 @@ p { margin-bottom: 1.25rem; }
 <ul class="sectlevel2">
 <li><a href="#_预设配置">1.1. 预设配置</a></li>
 <li><a href="#_使用dnf指令下载时间同步工具">1.2. 使用dnf指令下载时间同步工具</a></li>
-<li><a href="#_允许系统自启动时间同步工具">1.3. 允许系统自启动时间同步工具</a></li>
-<li><a href="#_网上拉取ceph镜像文件">1.4. 网上拉取ceph镜像文件</a></li>
-<li><a href="#_下载使用podman工具作为容器">1.5. 下载使用podman工具作为容器</a></li>
-<li><a href="#_使用指令下载ceph插件">1.6. 使用指令下载ceph插件</a></li>
-<li><a href="#_进入ceph_shell">1.7. 进入ceph shell</a></li>
-<li><a href="#_查看版本">1.8. 查看版本</a></li>
-<li><a href="#_下载epel_release">1.9. 下载epel-release</a></li>
-<li><a href="#_安装ceph_common">1.10. 安装ceph-common</a></li>
-<li><a href="#_查看版本_2">1.11. 查看版本</a></li>
-<li><a href="#_查看集群状态">1.12. 查看集群状态</a></li>
-<li><a href="#_在主机上将密钥发给集群中的其他机器">1.13. 在主机上将密钥发给集群中的其他机器</a></li>
-<li><a href="#_将其他机器加入集群">1.14. 将其他机器加入集群</a></li>
-<li><a href="#_将其他机器也设置成monitor">1.15. 将其他机器也设置成monitor</a></li>
-<li><a href="#_将硬盘加入osd">1.16. 将硬盘加入osd</a></li>
-<li><a href="#_创建集群文件系统">1.17. 创建集群文件系统</a></li>
-<li><a href="#_列出文件">1.18. 列出文件</a></li>
-<li><a href="#_查看信息">1.19. 查看信息</a></li>
-<li><a href="#_调试集群">1.20. 调试集群</a></li>
-<li><a href="#_查看集群文件系统状态">1.21. 查看集群文件系统状态</a></li>
-<li><a href="#_创建ceph文件夹">1.22. 创建ceph文件夹</a></li>
-<li><a href="#_将其他机器挂载到本机">1.23. 将其他机器挂载到本机</a></li>
+<li><a href="#_网上拉取ceph镜像文件">1.3. 网上拉取ceph镜像文件</a></li>
+<li><a href="#_下载使用podman工具作为容器">1.4. 下载使用podman工具作为容器</a></li>
+<li><a href="#_使用指令下载ceph插件">1.5. 使用指令下载ceph插件</a></li>
+<li><a href="#_进入ceph_shell">1.6. 进入ceph shell</a></li>
+<li><a href="#_下载epel_release">1.7. 下载epel-release</a></li>
+<li><a href="#_在主机上将密钥发给集群中的其他机器">1.8. 在主机上将密钥发给集群中的其他机器</a></li>
+<li><a href="#_创建集群文件系统">1.9. 创建集群文件系统</a></li>
+<li><a href="#_创建ceph文件夹">1.10. 创建ceph文件夹</a></li>
+</ul>
+</li>
+<li><a href="#_Git_chapter">2. Git</a>
+<ul class="sectlevel2">
+<li><a href="#_配置_git_客户端">2.1. 配置 <code>Git</code> 客户端</a></li>
+<li><a href="#_commit_模板">2.2. <code>commit</code> 模板</a></li>
+<li><a href="#_修改_commit_邮箱">2.3. 修改 <code>commit</code> 邮箱</a>
+<ul class="sectlevel3">
+<li><a href="#_安装依赖">2.3.1. 安装依赖</a></li>
+<li><a href="#_更新commit中的邮箱">2.3.2. 更新commit中的邮箱</a></li>
+</ul>
+</li>
+<li><a href="#_git_status_不显示中文">2.4. <code>git status</code> 不显示中文</a></li>
+<li><a href="#_修改远程url为ssh协议地址">2.5. 修改远程URL为SSH协议地址</a>
+<ul class="sectlevel3">
+<li><a href="#_延伸">2.5.1. 延伸</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_GitLab_chapter">3. GitLab</a>
+<ul class="sectlevel2">
+<li><a href="#_centos7安装配置">3.1. CentOS7安装配置</a></li>
+<li><a href="#_centos8_安装配置">3.2. CentOS8 安装配置</a>
+<ul class="sectlevel3">
+<li><a href="#_安装依赖_2">3.2.1. 安装依赖</a></li>
+<li><a href="#_安装gitlab">3.2.2. 安装GitLab</a></li>
+</ul>
+</li>
+<li><a href="#_nginx反代gitlab">3.3. Nginx反代GitLab</a>
+<ul class="sectlevel3">
+<li><a href="#_gitlab_设置">3.3.1. GitLab 设置</a></li>
+<li><a href="#_设置http_clone相关参数">3.3.2. 设置HTTP Clone相关参数</a></li>
+<li><a href="#_nginx_server配置">3.3.3. Nginx Server配置</a></li>
+<li><a href="#_最后">3.3.4. 最后</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -842,20 +866,15 @@ EOF</code></pre>
 <h3 id="_使用dnf指令下载时间同步工具">1.2. 使用dnf指令下载时间同步工具</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dnf install -y systemd-timesyncd</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dnf install -y systemd-timesyncd
+允许系统自启动时间同步工具
+[source ,bash]
+systemctl enable systemd-timesyncd --now</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_允许系统自启动时间同步工具">1.3. 允许系统自启动时间同步工具</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">systemctl enable systemd-timesyncd --now</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_网上拉取ceph镜像文件">1.4. 网上拉取ceph镜像文件</h3>
+<h3 id="_网上拉取ceph镜像文件">1.3. 网上拉取ceph镜像文件</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">rpm -Uvh https://download.ceph.com/rpm-18.1.3/el9/noarch/ceph-release-1-1.el9.noarch.rpm</code></pre>
@@ -873,7 +892,7 @@ sed mirrors.ustc.edu.cn  /etc/yum.repos.d/ceph.repo</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_下载使用podman工具作为容器">1.5. 下载使用podman工具作为容器</h3>
+<h3 id="_下载使用podman工具作为容器">1.4. 下载使用podman工具作为容器</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dnf install -y cephadm podman
@@ -883,7 +902,7 @@ https://docs.ceph.com/en/latest/cephadm/install/</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_使用指令下载ceph插件">1.6. 使用指令下载ceph插件</h3>
+<h3 id="_使用指令下载ceph插件">1.5. 使用指令下载ceph插件</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dnf install -y centos-release-ceph-pacific</code></pre>
@@ -899,146 +918,324 @@ https://docs.ceph.com/en/latest/cephadm/install/</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_进入ceph_shell">1.7. 进入ceph shell</h3>
+<h3 id="_进入ceph_shell">1.6. 进入ceph shell</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cephadm shell</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cephadm shell
+查看版本
+[source ,bash]
+cephadm shell -- ceph -s</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_查看版本">1.8. 查看版本</h3>
+<h3 id="_下载epel_release">1.7. 下载epel-release</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cephadm shell -- ceph -s</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dnf install -y epel-release
+安装ceph-common
+[source ,bash]
+cephadm install ceph-common
+查看版本
+[source ,bash]
+ceph -v
+查看集群状态
+[source ,bash]
+ceph status</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_下载epel_release">1.9. 下载epel-release</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dnf install -y epel-release</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_安装ceph_common">1.10. 安装ceph-common</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cephadm install ceph-common</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_查看版本_2">1.11. 查看版本</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph -v</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_查看集群状态">1.12. 查看集群状态</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph status</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_在主机上将密钥发给集群中的其他机器">1.13. 在主机上将密钥发给集群中的其他机器</h3>
+<h3 id="_在主机上将密钥发给集群中的其他机器">1.8. 在主机上将密钥发给集群中的其他机器</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph cephadm get-pub-key &gt; ~/ceph.pub
 ssh-copy-id -f -i ~/ceph.pub root@ceph2
-ssh-copy-id -f -i ~/ceph.pub root@ceph3</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_将其他机器加入集群">1.14. 将其他机器加入集群</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cephadm shell -- ceph orch host add ceph1 192.168.122.91
+ssh-copy-id -f -i ~/ceph.pub root@ceph3
+将其他机器加入集群
+[source ,bash]
+cephadm shell -- ceph orch host add ceph1 192.168.122.91
 cephadm shell -- ceph orch host add ceph2 192.168.122.21
-cephadm shell -- ceph orch host add ceph3 192.168.122.201</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_将其他机器也设置成monitor">1.15. 将其他机器也设置成monitor</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cephadm shell -- ceph orch host label add ceph1 mon
+cephadm shell -- ceph orch host add ceph3 192.168.122.201
+将其他机器也设置成monitor
+[source ,bash]
+cephadm shell -- ceph orch host label add ceph1 mon
 cephadm shell -- ceph orch host label add ceph2 mon
-cephadm shell -- ceph orch host label add ceph3 mon</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_将硬盘加入osd">1.16. 将硬盘加入osd</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cephadm shell -- ceph orch daemon add osd ceph1:/dev/vdb
+cephadm shell -- ceph orch host label add ceph3 mon
+将硬盘加入osd
+[source ,bash]
+cephadm shell -- ceph orch daemon add osd ceph1:/dev/vdb
 cephadm shell -- ceph orch daemon add osd ceph2:/dev/vdb
 cephadm shell -- ceph orch daemon add osd ceph3:/dev/vdb</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_创建集群文件系统">1.17. 创建集群文件系统</h3>
+<h3 id="_创建集群文件系统">1.9. 创建集群文件系统</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph fs volume create geek_cephfs  --placement=3</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph fs volume create geek_cephfs  --placement=3
+列出文件
+[source ,bash]
+ceph fs ls
+查看信息
+[source ,bash]
+ceph fs volume info geek_cephfs
+调试集群
+[source ,bash]
+ceph orch apply mds geek_cephfs --placement=3
+查看集群文件系统状态
+[source ,bash]
+ceph mds stat</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_列出文件">1.18. 列出文件</h3>
+<h3 id="_创建ceph文件夹">1.10. 创建ceph文件夹</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph fs ls</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir -p /mnt/ceph
+将其他机器挂载到本机
+[source ,bash]
+mount -t ceph 192.168.122.91:6789,192.168.122.21:6789,192.168.122.201:6789:/ /mnt/ceph -o name=admin,</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_Git_chapter">2. Git</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_配置_git_客户端">2.1. 配置 <code>Git</code> 客户端</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>git config &#8230;&#8203;&#8230;&#8203;</code></dt>
+<dd>
+<p>项目级设置</p>
+</dd>
+<dt class="hdlist1"><code>git config --global &#8230;&#8203;&#8230;&#8203;</code></dt>
+<dd>
+<p>系统级设置</p>
+</dd>
+<dt class="hdlist1"><code>git config --global core.editor vim</code></dt>
+<dd>
+<p>全局默认编辑器</p>
+</dd>
+<dt class="hdlist1"><code>git config --global user.name "foo"</code></dt>
+<dd>
+<p>全局用户名称</p>
+</dd>
+<dt class="hdlist1"><code>git config --global user.email <a href="mailto:foo@example.com">foo@example.com</a></code></dt>
+<dd>
+<p>全局Email</p>
+</dd>
+<dt class="hdlist1"><code>git config --global core.quotepath false</code></dt>
+<dd>
+<p>git status 显示中文</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="title">查看配置列表</div>
+<div class="content">
+<pre>$ git config --list
+core.packedgitlimit=100m
+core.packedgitwindowsize=100m
+core.quotepath=false
+core.compression=9
+core.editor=vim
+user.name=foo
+user.email=foo@example.com
+pack.deltacachesize=100m
+pack.packsizelimit=100m
+pack.windowmemory=100m
+pack.threads=1
+pack.window=0
+commit.template=/home/mk/.gitmessage.txt</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_查看信息">1.19. 查看信息</h3>
+<h3 id="_commit_模板">2.2. <code>commit</code> 模板</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>设置全局默认编辑器： <code>git config --global core.editor vim</code></p>
+</li>
+<li>
+<p>设置全局 <code>commit</code> 模板： <code>git config --global commit.template ~/.gitmessage.txt</code></p>
+</li>
+<li>
+<p>执行 <code>git commit</code>  即可使用 <code>commit</code> 模板</p>
+</li>
+</ol>
+</div>
 <div class="listingblock">
+<div class="title">gitmessage.txt 文件内容</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph fs volume info geek_cephfs</code></pre>
+<pre># Type(&lt;scope&gt;): &lt;subject&gt;
+
+# &lt;body&gt;
+
+# &lt;footer&gt;
+
+# ** TYPES **
+# feat (new feature)
+# fix (bug fix)
+# docs (changes to documentation)
+# style (formatting, missing semi colons, etc; no code change)
+# refactor (refactoring production code)
+# perf (improves performance)
+# revert (revert commit)
+# test (adding missing tests, refactoring tests; no production code change)
+# chore (updating grunt tasks etc; no production code change)
+#
+# ** FOOTERS **
+# References #1, #4, and #2.
+# Fix #1. note this marks the item as accepted in Sprintly
+# Closes #1 and #2. note this marks the item as accepted in Sprintly
+
+# Scope is just the scope of the change. Something like (admin) or (teacher).
+# Subject should use impertivite tone and say what you did.
+# The body should go into detail about changes made.
+# The footer should contain any JIRA (or other tool) issue references or actions.
+
+# e.g.,
+# revert: feat(pencil): add 'graphiteWidth' option
+# This reverts commit 667ecc1654a317a13331b17617d973392f415f02.</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_调试集群">1.20. 调试集群</h3>
+<h3 id="_修改_commit_邮箱">2.3. 修改 <code>commit</code> 邮箱</h3>
+<div class="paragraph">
+<p><strong>本方法适用于Python 3.5+</strong></p>
+</div>
+<div class="sect3">
+<h4 id="_安装依赖">2.3.1. 安装依赖</h4>
+<div class="paragraph">
+<p>安装Python插件：</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph orch apply mds geek_cephfs --placement=3</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pip install git-filter-repo
+
+ls ~/.local/bin/git-filter-repo</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>设置环境变量：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">echo 'export PATH=$PATH:~/.local/bin' &gt;&gt; ~/.bashrc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>生效环境变量：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">source ~/.bashrc</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_更新commit中的邮箱">2.3.2. 更新commit中的邮箱</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># 请自行替换以下信息
+echo '作者 &lt;新邮箱&gt; &lt;旧邮箱&gt;' &gt; ~/.mailmap
+
+git filter-repo --mailmap ~/.mailmap --force
+
+git push origin  master --force</code></pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_查看集群文件系统状态">1.21. 查看集群文件系统状态</h3>
+<h3 id="_git_status_不显示中文">2.4. <code>git status</code> 不显示中文</h3>
 <div class="listingblock">
+<div class="title">问题描述</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ceph mds stat</code></pre>
+<pre>$ git status
+On branch dev
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    "\346\265\213\350\257\225\344\270\255\346\226\207"
+
+nothing added to commit but untracked files present (use "git add" to track)</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">解决方法</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git config --global core.quotepath false</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">测试</div>
+<div class="content">
+<pre>$ git status
+On branch dev
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    测试
+
+nothing added to commit but untracked files present (use "git add" to track)</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_创建ceph文件夹">1.22. 创建ceph文件夹</h3>
+<h3 id="_修改远程url为ssh协议地址">2.5. 修改远程URL为SSH协议地址</h3>
+<div class="listingblock">
+<div class="title">修改前</div>
+<div class="content">
+<pre>$ git remote -v
+origin  https://github.com/USERNAME/REPOSITORY.git (fetch)
+origin  https://github.com/USERNAME/REPOSITORY.git (push)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>设置远程仓库： <code>git remote set-url origin <a href="mailto:git@github.com">git@github.com</a>:USERNAME/OTHERREPOSITORY.git</code></p>
+</div>
+<div class="listingblock">
+<div class="title">修改前</div>
+<div class="content">
+<pre>$ git remote -v
+origin  git@github.com:USERNAME/OTHERREPOSITORY.git (fetch)
+origin  git@github.com:USERNAME/OTHERREPOSITORY.git (push)</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_延伸">2.5.1. 延伸</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>git remote add origin <a href="mailto:git@github.com">git@github.com</a>:USERNAME/OTHERREPOSITORY.git</code></p>
+</li>
+<li>
+<p><code>git remote remove origin</code></p>
+</li>
+<li>
+<p><code>git remote add test <a href="mailto:git@github.com">git@github.com</a>:USERNAME/OTHERREPOSITORY.git</code></p>
+</li>
+<li>
+<p><code>git remote remove test</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>以上命令可以增加和移除远程仓库，一个项目可以同时拥有多个远程仓库。仅需要在推送时，指定远程仓库即可，比如</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir -p /mnt/ceph</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_将其他机器挂载到本机">1.23. 将其他机器挂载到本机</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mount -t ceph 192.168.122.91:6789,192.168.122.21:6789,192.168.122.201:6789:/ /mnt/ceph -o name=admin,</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git push test master</code></pre>
 </div>
 </div>
 <div style="page-break-after: always;"></div>
@@ -1046,9 +1243,442 @@ cephadm shell -- ceph orch daemon add osd ceph3:/dev/vdb</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_GitLab_chapter">3. GitLab</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_centos7安装配置">3.1. CentOS7安装配置</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">官方文档</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://about.gitlab.com/install/#centos-7" class="bare">https://about.gitlab.com/install/#centos-7</a></p>
+</li>
+<li>
+<p><a href="https://docs.gitlab.com/omnibus/README.html#installation-and-configuration-using-omnibus-package" class="bare">https://docs.gitlab.com/omnibus/README.html#installation-and-configuration-using-omnibus-package</a></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | bash
+
+EXTERNAL_URL="http://192.168.2.8:8282"  yum install -y gitlab-ce</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">安装信息</div>
+<div class="content">
+<pre>It looks like GitLab has not been configured yet; skipping the upgrade script.
+
+
+
+Thank you for installing GitLab!
+GitLab was unable to detect a valid hostname for your instance.
+Please configure a URL for your GitLab instance by setting `external_url`
+configuration in /etc/gitlab/gitlab.rb file.
+Then, you can start your GitLab instance by running the following command:
+  sudo gitlab-ctl reconfigure
+
+For a comprehensive list of configuration options please see the Omnibus GitLab readme
+https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md
+
+
+GitLab now ships with a newer version of PostgreSQL (11.7), but it is not yet
+enabled by default. To upgrade, please see:
+https://docs.gitlab.com/omnibus/settings/database.html#upgrade-packaged-postgresql-server
+
+  Verifying  : gitlab-ce-12.9.0-ce.0.el7.x86_64                                                                                                           1/1
+
+Installed:
+  gitlab-ce.x86_64 0:12.9.0-ce.0.el7
+
+Complete!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>重新配置（恢复默认配置）：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gitlab-ctl reconfigure</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>重启服务：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gitlab-ctl restart</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>安装完毕后，默认访问80端口即可：</p>
+</div>
+<div class="paragraph">
+<p><a href="http://localhost" class="bare">http://localhost</a></p>
+</div>
+<div class="paragraph">
+<p>默认登录用户 root，密码第一次访问会提示修改。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_centos8_安装配置">3.2. CentOS8 安装配置</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">官方文档</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://about.gitlab.com/install/#centos-8" class="bare">https://about.gitlab.com/install/#centos-8</a></p>
+</li>
+<li>
+<p><a href="https://docs.gitlab.com/omnibus/README.html#installation-and-configuration-using-omnibus-package" class="bare">https://docs.gitlab.com/omnibus/README.html#installation-and-configuration-using-omnibus-package</a></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_安装依赖_2">3.2.1. 安装依赖</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dnf install -y curl policycoreutils openssh-server
+# Check if opening the firewall is needed with: systemctl status firewalld
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+systemctl reload firewalld
+
+
+dnf install -y postfix
+systemctl enable postfix
+systemctl start postfix</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_安装gitlab">3.2.2. 安装GitLab</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | bash
+
+EXTERNAL_URL="http://0.0.0.0:8000"  dnf install -y gitlab-ce</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>一般情况下，GitLab的CDN下载会比较慢，可以找出RPM包的URL，单独下载。然后，手动 <code>dnf install RPM包名称</code>。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | bash
+
+yumdownloader --urls gitlab-ce</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Repository epel is listed more than once in the configuration
+Extra Packages for Enterprise Linux Modular 8 - x86_64                                                                                                        2.7 kB/s |  10 kB     00:03
+Extra Packages for Enterprise Linux Modular 8 - x86_64                                                                                                         28 kB/s | 116 kB     00:04
+gitlab_gitlab-ce                                                                                                                                               77  B/s | 862  B     00:11
+gitlab_gitlab-ce-source                                                                                                                                       100  B/s | 862  B     00:08
+https://packages.gitlab.com/gitlab/gitlab-ce/el/8/x86_64/gitlab-ce-12.10.2-ce.0.el8.x86_64.rpm</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">使用Wget断点续传，可中断后继续下载</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget -c https://packages.gitlab.com/gitlab/gitlab-ce/el/8/x86_64/gitlab-ce-12.10.2-ce.0.el8.x86_64.rpm</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+如果下载慢，可以多次中断。然后，再执行wget下载。也可以使用 <code>axel -n url</code> 多线程下载。
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">EXTERNAL_URL="http://0.0.0.0:8000"  dnf install -y gitlab-ce-12.10.2-ce.0.el8.x86_64.rpm</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">安装信息</div>
+<div class="content">
+<pre>Repository epel is listed more than once in the configuration
+Last metadata expiration check: 0:00:44 ago on Sat 02 May 2020 01:42:36 PM CST.
+Dependencies resolved.
+=================================================================================================
+ Package          Architecture          Version          Repository          Size
+=================================================================================================
+Installing:
+ gitlab-ce        x86_64                12.10.2-ce.0.el8 @commandline        789 M
+
+Transaction Summary
+=================================================================================================
+Install  1 Package
+
+Total size: 789 M
+Installed size: 1.7 G
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                      1/1
+  Running scriptlet: gitlab-ce-12.10.2-ce.0.el8.x86_64                                                                    1/1
+  Installing       : gitlab-ce-12.10.2-ce.0.el8.x86_64                                                                    1/1
+  Running scriptlet: gitlab-ce-12.10.2-ce.0.el8.x86_64                                                                    1/1
+It looks like GitLab has not been configured yet; skipping the upgrade script.
+
+       *.                  *.
+      ***                 ***
+     *****               *****
+    .******             *******
+    ********            ********
+   ,,,,,,,,,***********,,,,,,,,,
+  ,,,,,,,,,,,*********,,,,,,,,,,,
+  .,,,,,,,,,,,*******,,,,,,,,,,,,
+      ,,,,,,,,,*****,,,,,,,,,.
+         ,,,,,,,****,,,,,,
+            .,,,***,,,,
+                ,*,.
+
+
+
+     _______ __  __          __
+    / ____(_) /_/ /   ____ _/ /_
+   / / __/ / __/ /   / __ `/ __ \
+  / /_/ / / /_/ /___/ /_/ / /_/ /
+  \____/_/\__/_____/\__,_/_.___/
+
+
+Thank you for installing GitLab!
+GitLab was unable to detect a valid hostname for your instance.
+Please configure a URL for your GitLab instance by setting `external_url`
+configuration in /etc/gitlab/gitlab.rb file.
+Then, you can start your GitLab instance by running the following command:
+  sudo gitlab-ctl reconfigure
+
+For a comprehensive list of configuration options please see the Omnibus GitLab readme
+https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md
+
+
+  Verifying        : gitlab-ce-12.10.2-ce.0.el8.x86_64                                                                    1/1
+
+Installed:
+  gitlab-ce-12.10.2-ce.0.el8.x86_64
+
+Complete!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>重新配置（恢复默认配置）：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gitlab-ctl reconfigure</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>重启服务：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gitlab-ctl restart</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>安装完毕后，默认访问80端口即可：</p>
+</div>
+<div class="paragraph">
+<p><a href="http://localhost" class="bare">http://localhost</a></p>
+</div>
+<div class="paragraph">
+<p>我们上面使用的是 <a href="http://0.0.0.0:8000，所以访问地址为：" class="bare">http://0.0.0.0:8000，所以访问地址为：</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://服务器IP:8000" class="bare">http://服务器IP:8000</a></p>
+</div>
+<div class="paragraph">
+<p>默认登录用户 root，密码第一次访问会提示修改。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nginx反代gitlab">3.3. Nginx反代GitLab</h3>
+<div class="paragraph">
+<p>安装GitLab之后，通过单独的Nginx反代，暴露给外网访问。由于Nginx配置和GitLab内部的访问端口不同，为保证功能正常使用，需要修改GitLab配置。</p>
+</div>
+<div class="sect3">
+<h4 id="_gitlab_设置">3.3.1. GitLab 设置</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># 禁用默认配置
+sed -i 's/^external_url /#external_url /g' /etc/gitlab/gitlab.rb
+
+cat &lt;&lt; EOF &gt;&gt; /etc/gitlab/gitlab.rb
+# 禁止k8s相关模块
+gitlab_kas['enable'] = false
+
+# 禁止默认功能设置
+gitlab_rails['gitlab_default_projects_features_wiki'] = false
+gitlab_rails['gitlab_default_projects_features_builds'] = false
+
+gitlab_rails['gitlab_host'] = 'git.xxx.com'
+gitlab_rails['gitlab_port'] = 443
+gitlab_rails['gitlab_https'] = true
+
+gitlab_rails['gitlab_ssh_host'] = 'git.xxx.com'
+gitlab_rails['gitlab_shell_ssh_port'] = 22
+
+# 禁用自动签发免费HTTPS证书
+letsencrypt['enable'] = false
+
+# 禁用签发证书后，需要显式启用Nginx服务
+nginx['enable'] = true
+# 禁用Nginx的HTTPS配置
+nginx['redirect_http_to_https'] = false
+nginx['listen_https'] = false
+
+# Nginx端口监听配置
+nginx['listen_addresses'] = ['127.0.0.1']
+nginx['listen_port'] = 8000
+
+git_data_dirs({
+    "default" =&gt; {
+        "path" =&gt; "/data/gitlab_data"
+    }
+})
+EOF
+
+# 重新生成配置并重启
+gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
+
+# 确认Nginx服务状态
+ss -antpl|grep 8000</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_设置http_clone相关参数">3.3.2. 设置HTTP Clone相关参数</h4>
+<div class="paragraph">
+<p>用管理员帐号登录GitLab，进入以下菜单：</p>
+</div>
+<div class="paragraph">
+<p>Admin Area &gt; Settings &gt; General &gt; Visibility and access controls</p>
+</div>
+<div class="paragraph">
+<p>找到 <code>"Custom Git clone URL for HTTP(S) "</code>，根据实际情况填写，比如：https://git.xxx.com:2305</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_nginx_server配置">3.3.3. Nginx Server配置</h4>
+<div class="listingblock">
+<div class="content">
+<pre>server {
+    listen 2035 ssl http2;
+    server_name git.xxx.com;
+
+    # certs sent to the client in SERVER HELLO are concatenated in ssl_certificate
+    ssl_certificate /etc/letsencrypt/live/xxx.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/xxx.com/privkey.pem;
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_tickets off;
+
+    # Diffie-Hellman parameter for DHE ciphersuites, recommended 2048 bits
+    ssl_dhparam /etc/letsencrypt/live/xxx.com/dhparam.pem;
+
+    # intermediate configuration. tweak to your needs.
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS';
+    ssl_prefer_server_ciphers on;
+
+    # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
+    add_header Strict-Transport-Security max-age=15768000;
+
+    # OCSP Stapling ---
+    # fetch OCSP records from URL in ssl_certificate and cache them
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+    # 替换URL，解决README.md之类无法加载的问题
+    sub_filter 'http://git.xxx.com'  'https://git.xxx.com';
+    sub_filter_once off;
+    sub_filter_last_modified on;
+    # 替换 text/html application/json HTTP响应包中的内容
+    sub_filter_types application/json;
+
+    location / {
+        auth_basic           "Administrator’s Area";
+        auth_basic_user_file /etc/nginx/.htpasswd;
+
+        # 必须设置，否则新建项目后，会302跳转到http的80端口
+        proxy_set_header Host git.xxx.com:443;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto https;
+
+        proxy_pass http://127.0.0.1:1034;
+    }
+
+    location ~ ^/\.git/? {
+        return 404;
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>生效Nginx配置：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">nginx -t &amp;&amp; nginx -s reload</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_最后">3.3.4. 最后</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">外网GitLab访问地址</dt>
+<dd>
+<p><a href="https://git.xxx.com" class="bare">https://git.xxx.com</a></p>
+</dd>
+<dt class="hdlist1">SSH克隆地址</dt>
+<dd>
+<p>ssh://git@git.xxx.com/用户名/项目名称.git</p>
+</dd>
+<dt class="hdlist1">HTTP克隆地址</dt>
+<dd>
+<p><a href="https://git.xxx.com/用户名/项目名称.git" class="bare">https://git.xxx.com/用户名/项目名称.git</a></p>
+</dd>
+</dl>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-08-14 11:11:34 +0800
+Last updated 2023-08-21 09:12:11 +0800
 </div>
 </div>
 <script src="js/highlight.min.js"></script>
