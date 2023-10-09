@@ -863,41 +863,35 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_访问jenkins_web">5.6. 访问Jenkins Web</a></li>
 </ul>
 </li>
-<li><a href="#_jenkins_2">6. Jenkins</a>
+<li><a href="#_mangodb">6. Mangodb</a>
 <ul class="sectlevel2">
 <li><a href="#_下载mongodb的docker镜像">6.1. 下载MongoDB的Docker镜像；</a></li>
 <li><a href="#_使用docker命令启动mongodb服务">6.2. 使用Docker命令启动MongoDB服务；</a></li>
-<li><a href="#_有时候我们需要为mongodb设置账号可以使用如下命令启动">6.3. 有时候我们需要为MongoDB设置账号，可以使用如下命令启动；</a></li>
-<li><a href="#_然后我们需要进入容器中的mongodb客户端">6.4. 然后我们需要进入容器中的MongoDB客户端；</a></li>
-<li><a href="#_之后在admin集合中创建一个账号用于连接这里创建的是基于root角色的超级管理员帐号">6.5. 之后在admin集合中创建一个账号用于连接，这里创建的是基于root角色的超级管理员帐号；</a></li>
-<li><a href="#_创建完成后验证是否可以登录">6.6. 创建完成后验证是否可以登录；</a></li>
+<li><a href="#_mongodb设置账号">6.3. MongoDB设置账号：</a></li>
+<li><a href="#_进入容器中的mongodb客户端">6.4. 进入容器中的MongoDB客户端：</a></li>
+<li><a href="#_创建一个账号用于连接">6.5. 创建一个账号用于连接：</a></li>
+<li><a href="#_验证登录">6.6. 验证登录；</a></li>
 <li><a href="#_语法">6.7. 语法</a></li>
-<li><a href="#_可以看到我们刚创建的数据库_youj_并不在数据库的列表中_要显示它我们需要向_youj_数据库插入一些数据">6.8. 可以看到，我们刚创建的数据库 youj 并不在数据库的列表中， 要显示它，我们需要向 youj 数据库插入一些数据。</a></li>
+<li><a href="#_插入数据">6.8. 插入数据</a></li>
 <li><a href="#_删除数据库">6.9. 删除数据库</a></li>
 <li><a href="#_删除集合">6.10. 删除集合</a></li>
 </ul>
 </li>
-<li><a href="#_jenkins_3">7. Jenkins</a></li>
-<li><a href="#_环境要求">8. 环境要求</a>
+<li><a href="#_mysql主从">7. Mysql主从</a>
 <ul class="sectlevel2">
-<li><a href="#_安装mysql_下载软件包">8.1. 安装mysql 下载软件包：</a></li>
-<li><a href="#_安装mysql">8.2. 安装mysql：</a></li>
-<li><a href="#_设为开机启动">8.3. 设为开机启动：</a></li>
-<li><a href="#_启动mysql">8.4. 启动mysql：</a></li>
-<li><a href="#_获取mysql的临时密码">8.5. 获取mysql的临时密码：</a></li>
-<li><a href="#_登录mysql">8.6. 登录mysql：</a></li>
-<li><a href="#_刷新配置">8.7. 刷新配置：</a></li>
-</ul>
-</li>
-<li><a href="#_主服务器">9. 主服务器：</a>
-<ul class="sectlevel2">
-<li><a href="#_修改配置文件">9.1. 修改配置文件</a></li>
-</ul>
-</li>
-<li><a href="#_从服务器">10. 从服务器</a>
-<ul class="sectlevel2">
-<li><a href="#_在从mysql中查看主从同步状态">10.1. 在从mysql中查看主从同步状态：</a></li>
-<li><a href="#_再次查看同步状态">10.2. 再次查看同步状态：</a></li>
+<li><a href="#_环境要求">7.1. 环境要求</a></li>
+<li><a href="#_安装mysql_下载软件包">7.2. 安装mysql 下载软件包：</a></li>
+<li><a href="#_安装mysql">7.3. 安装mysql：</a></li>
+<li><a href="#_设为开机启动">7.4. 设为开机启动：</a></li>
+<li><a href="#_启动mysql">7.5. 启动mysql：</a></li>
+<li><a href="#_获取mysql的临时密码">7.6. 获取mysql的临时密码：</a></li>
+<li><a href="#_登录mysql">7.7. 登录mysql：</a></li>
+<li><a href="#_刷新配置">7.8. 刷新配置：</a></li>
+<li><a href="#_主服务器">7.9. 主服务器：</a></li>
+<li><a href="#_修改配置文件">7.10. 修改配置文件</a></li>
+<li><a href="#_从服务器">7.11. 从服务器</a></li>
+<li><a href="#_在从mysql中查看主从同步状态">7.12. 在从mysql中查看主从同步状态：</a></li>
+<li><a href="#_再次查看同步状态">7.13. 再次查看同步状态：</a></li>
 </ul>
 </li>
 </ul>
@@ -2429,7 +2423,7 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 <div class="sect1">
-<h2 id="_jenkins_2">6. Jenkins</h2>
+<h2 id="_mangodb">6. Mangodb</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_下载mongodb的docker镜像">6.1. 下载MongoDB的Docker镜像；</h3>
@@ -2450,7 +2444,7 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_有时候我们需要为mongodb设置账号可以使用如下命令启动">6.3. 有时候我们需要为MongoDB设置账号，可以使用如下命令启动；</h3>
+<h3 id="_mongodb设置账号">6.3. MongoDB设置账号：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run -p 27017:27017 --name mongo \
@@ -2460,7 +2454,7 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_然后我们需要进入容器中的mongodb客户端">6.4. 然后我们需要进入容器中的MongoDB客户端；</h3>
+<h3 id="_进入容器中的mongodb客户端">6.4. 进入容器中的MongoDB客户端：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker exec -it mongo mongo</code></pre>
@@ -2468,7 +2462,7 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_之后在admin集合中创建一个账号用于连接这里创建的是基于root角色的超级管理员帐号">6.5. 之后在admin集合中创建一个账号用于连接，这里创建的是基于root角色的超级管理员帐号；</h3>
+<h3 id="_创建一个账号用于连接">6.5. 创建一个账号用于连接：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">use admin
@@ -2480,7 +2474,7 @@ db.createUser({
 </div>
 </div>
 <div class="sect2">
-<h3 id="_创建完成后验证是否可以登录">6.6. 创建完成后验证是否可以登录；</h3>
+<h3 id="_验证登录">6.6. 验证登录；</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">db.auth("mongoadmin","secret")
@@ -2515,7 +2509,7 @@ test   0.078GB</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_可以看到我们刚创建的数据库_youj_并不在数据库的列表中_要显示它我们需要向_youj_数据库插入一些数据">6.8. 可以看到，我们刚创建的数据库 youj 并不在数据库的列表中， 要显示它，我们需要向 youj 数据库插入一些数据。</h3>
+<h3 id="_插入数据">6.8. 插入数据</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&gt; db.youj.insert({"name":"W3Cschool教程"})
@@ -2554,19 +2548,16 @@ test    0.078GB
 </div>
 </div>
 <div class="sect1">
-<h2 id="_jenkins_3">7. Jenkins</h2>
+<h2 id="_mysql主从">7. Mysql主从</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_环境要求">8. 环境要求</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_环境要求">7.1. 环境要求</h3>
 <div class="paragraph">
 <p>CentOS-Stream9</p>
 </div>
+</div>
 <div class="sect2">
-<h3 id="_安装mysql_下载软件包">8.1. 安装mysql 下载软件包：</h3>
+<h3 id="_安装mysql_下载软件包">7.2. 安装mysql 下载软件包：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">yum install -y https://dev.mysql.com/get/ mysql80-community-release-el9-3.noarch.rpm</code></pre>
@@ -2574,7 +2565,7 @@ test    0.078GB
 </div>
 </div>
 <div class="sect2">
-<h3 id="_安装mysql">8.2. 安装mysql：</h3>
+<h3 id="_安装mysql">7.3. 安装mysql：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">yum install mysql-community-server</code></pre>
@@ -2582,7 +2573,7 @@ test    0.078GB
 </div>
 </div>
 <div class="sect2">
-<h3 id="_设为开机启动">8.3. 设为开机启动：</h3>
+<h3 id="_设为开机启动">7.4. 设为开机启动：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">systemctl enable mysqld
@@ -2591,7 +2582,7 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_启动mysql">8.4. 启动mysql：</h3>
+<h3 id="_启动mysql">7.5. 启动mysql：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">systemctl start mysqld</code></pre>
@@ -2599,7 +2590,7 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_获取mysql的临时密码">8.5. 获取mysql的临时密码：</h3>
+<h3 id="_获取mysql的临时密码">7.6. 获取mysql的临时密码：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">grep 'temporary password' /var/log/mysqld.log</code></pre>
@@ -2607,7 +2598,7 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_登录mysql">8.6. 登录mysql：</h3>
+<h3 id="_登录mysql">7.7. 登录mysql：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mysql -uroot -p</code></pre>
@@ -2625,20 +2616,19 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_刷新配置">8.7. 刷新配置：</h3>
+<h3 id="_刷新配置">7.8. 刷新配置：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">FLUSH PRIVILEGES;</code></pre>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_主服务器">9. 主服务器：</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_修改配置文件">9.1. 修改配置文件</h3>
+<h3 id="_主服务器">7.9. 主服务器：</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_修改配置文件">7.10. 修改配置文件</h3>
 <div class="paragraph">
 <p>配置文件默认在/etc/my.cnf下。
 <mark> 同一局域网内注意要唯一
@@ -2682,11 +2672,8 @@ GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';</code></pre>
 <p>记录下File和Position的值，并且不进行其他操作以免引起Position的变化。</p>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_从服务器">10. 从服务器</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_从服务器">7.11. 从服务器</h3>
 <div class="paragraph">
 <p>在从服务器中/etc/my.cnf下配置中新增：
 <mark> 设置server_id,注意要唯一
@@ -2727,8 +2714,9 @@ master_log_pos：从哪个 Position 开始读，即上文中提到的 Position �
 master_connect_retry：如果连接失败，重试的时间间隔，单位是秒，默认是60秒</code></pre>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="_在从mysql中查看主从同步状态">10.1. 在从mysql中查看主从同步状态：</h3>
+<h3 id="_在从mysql中查看主从同步状态">7.12. 在从mysql中查看主从同步状态：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">show slave status \G;</code></pre>
@@ -2745,7 +2733,7 @@ master_connect_retry：如果连接失败，重试的时间间隔，单位是秒
 </div>
 </div>
 <div class="sect2">
-<h3 id="_再次查看同步状态">10.2. 再次查看同步状态：</h3>
+<h3 id="_再次查看同步状态">7.13. 再次查看同步状态：</h3>
 <div class="paragraph">
 <p>show slave status \G;</p>
 </div>
@@ -2756,7 +2744,7 @@ master_connect_retry：如果连接失败，重试的时间间隔，单位是秒
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-10-09 14:52:03 +0800
+Last updated 2023-10-09 14:54:29 +0800
 </div>
 </div>
 <script src="js/highlight.min.js"></script>
