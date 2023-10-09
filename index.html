@@ -863,6 +863,20 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_访问jenkins_web">5.6. 访问Jenkins Web</a></li>
 </ul>
 </li>
+<li><a href="#_jenkins_2">6. Jenkins</a>
+<ul class="sectlevel2">
+<li><a href="#_下载mongodb的docker镜像">6.1. 下载MongoDB的Docker镜像；</a></li>
+<li><a href="#_使用docker命令启动mongodb服务">6.2. 使用Docker命令启动MongoDB服务；</a></li>
+<li><a href="#_有时候我们需要为mongodb设置账号可以使用如下命令启动">6.3. 有时候我们需要为MongoDB设置账号，可以使用如下命令启动；</a></li>
+<li><a href="#_然后我们需要进入容器中的mongodb客户端">6.4. 然后我们需要进入容器中的MongoDB客户端；</a></li>
+<li><a href="#_之后在admin集合中创建一个账号用于连接这里创建的是基于root角色的超级管理员帐号">6.5. 之后在admin集合中创建一个账号用于连接，这里创建的是基于root角色的超级管理员帐号；</a></li>
+<li><a href="#_创建完成后验证是否可以登录">6.6. 创建完成后验证是否可以登录；</a></li>
+<li><a href="#_语法">6.7. 语法</a></li>
+<li><a href="#_可以看到我们刚创建的数据库_youj_并不在数据库的列表中_要显示它我们需要向_youj_数据库插入一些数据">6.8. 可以看到，我们刚创建的数据库 youj 并不在数据库的列表中， 要显示它，我们需要向 youj 数据库插入一些数据。</a></li>
+<li><a href="#_删除数据库">6.9. 删除数据库</a></li>
+<li><a href="#_删除集合">6.10. 删除集合</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -2391,10 +2405,135 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_jenkins_2">6. Jenkins</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_下载mongodb的docker镜像">6.1. 下载MongoDB的Docker镜像；</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker pull mongo:4.2.5</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用docker命令启动mongodb服务">6.2. 使用Docker命令启动MongoDB服务；</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run -p 27017:27017 --name mongo \
+-v /mydata/mongo/db:/data/db \
+-d mongo:4.2.5</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_有时候我们需要为mongodb设置账号可以使用如下命令启动">6.3. 有时候我们需要为MongoDB设置账号，可以使用如下命令启动；</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run -p 27017:27017 --name mongo \
+-v /mydata/mongo/db:/data/db \
+-d mongo:4.2.5 --auth</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_然后我们需要进入容器中的mongodb客户端">6.4. 然后我们需要进入容器中的MongoDB客户端；</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker exec -it mongo mongo</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_之后在admin集合中创建一个账号用于连接这里创建的是基于root角色的超级管理员帐号">6.5. 之后在admin集合中创建一个账号用于连接，这里创建的是基于root角色的超级管理员帐号；</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">use admin
+db.createUser({
+    user: 'mongoadmin',
+    pwd: 'secret',
+    roles: [ { role: "root", db: "admin" } ] });</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_创建完成后验证是否可以登录">6.6. 创建完成后验证是否可以登录；</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">db.auth("mongoadmin","secret")
+# 删除用户命令：db.system.users.remove({user:"用户名"})</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_语法">6.7. 语法</h3>
+<div class="paragraph">
+<p>MongoDB 创建数据库的语法格式如下：
+use DATABASE_NAME
+以下实例我们创建了数据库 youj:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&gt;use youj
+switched to db youj
+&gt; db
+youj</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>如果你想查看所有数据库，可以使用 show dbs 命令：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&gt; show dbs
+local  0.078GB
+test   0.078GB</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_可以看到我们刚创建的数据库_youj_并不在数据库的列表中_要显示它我们需要向_youj_数据库插入一些数据">6.8. 可以看到，我们刚创建的数据库 youj 并不在数据库的列表中， 要显示它，我们需要向 youj 数据库插入一些数据。</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&gt; db.youj.insert({"name":"W3Cschool教程"})
+WriteResult({ "nInserted" : 1 })
+&gt; show dbs
+local   0.078GB
+youj  0.078GB
+test    0.078GB
+&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_删除数据库">6.9. 删除数据库</h3>
+<div class="paragraph">
+<p>MongoDB 删除数据库的语法格式如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">db.dropDatabase()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_删除集合">6.10. 删除集合</h3>
+<div class="paragraph">
+<p>集合删除语法格式如下：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">db.collection.drop()</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-08-29 17:38:37 +0800
+Last updated 2023-10-09 14:31:01 +0800
 </div>
 </div>
 <script src="js/highlight.min.js"></script>
