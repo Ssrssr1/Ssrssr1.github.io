@@ -865,33 +865,29 @@ p { margin-bottom: 1.25rem; }
 </li>
 <li><a href="#_mangodb">6. Mangodb</a>
 <ul class="sectlevel2">
-<li><a href="#_下载mongodb的docker镜像">6.1. 下载MongoDB的Docker镜像；</a></li>
-<li><a href="#_使用docker命令启动mongodb服务">6.2. 使用Docker命令启动MongoDB服务；</a></li>
-<li><a href="#_mongodb设置账号">6.3. MongoDB设置账号：</a></li>
-<li><a href="#_进入容器中的mongodb客户端">6.4. 进入容器中的MongoDB客户端：</a></li>
-<li><a href="#_创建一个账号用于连接">6.5. 创建一个账号用于连接：</a></li>
+<li><a href="#_下载mongodb的docker镜像">6.1. 下载MongoDB的Docker镜像</a></li>
+<li><a href="#_使用docker命令启动mongodb服务">6.2. 使用Docker命令启动MongoDB服务</a></li>
+<li><a href="#_mongodb设置账号">6.3. MongoDB设置账号</a></li>
+<li><a href="#_进入容器中的mongodb客户端">6.4. 进入容器中的MongoDB客户端</a></li>
+<li><a href="#_创建一个账号用于连接">6.5. 创建一个账号用于连接</a></li>
 <li><a href="#_验证登录">6.6. 验证登录；</a></li>
 <li><a href="#_语法">6.7. 语法</a></li>
 <li><a href="#_插入数据">6.8. 插入数据</a></li>
 <li><a href="#_删除数据库">6.9. 删除数据库</a></li>
 <li><a href="#_删除集合">6.10. 删除集合</a></li>
-</ul>
-</li>
-<li><a href="#_mysql主从">7. Mysql主从</a>
-<ul class="sectlevel2">
-<li><a href="#_环境要求">7.1. 环境要求</a></li>
-<li><a href="#_安装mysql_下载软件包">7.2. 安装mysql 下载软件包：</a></li>
-<li><a href="#_安装mysql">7.3. 安装mysql：</a></li>
-<li><a href="#_设为开机启动">7.4. 设为开机启动：</a></li>
-<li><a href="#_启动mysql">7.5. 启动mysql：</a></li>
-<li><a href="#_获取mysql的临时密码">7.6. 获取mysql的临时密码：</a></li>
-<li><a href="#_登录mysql">7.7. 登录mysql：</a></li>
-<li><a href="#_刷新配置">7.8. 刷新配置：</a></li>
-<li><a href="#_主服务器">7.9. 主服务器：</a></li>
-<li><a href="#_修改配置文件">7.10. 修改配置文件</a></li>
-<li><a href="#_从服务器">7.11. 从服务器</a></li>
-<li><a href="#_在从mysql中查看主从同步状态">7.12. 在从mysql中查看主从同步状态：</a></li>
-<li><a href="#_再次查看同步状态">7.13. 再次查看同步状态：</a></li>
+<li><a href="#_环境要求">6.11. 环境要求</a></li>
+<li><a href="#_安装mysql_下载软件包">6.12. 安装mysql 下载软件包</a></li>
+<li><a href="#_安装mysql">6.13. 安装mysql</a></li>
+<li><a href="#_设为开机启动">6.14. 设为开机启动：</a></li>
+<li><a href="#_启动mysql">6.15. 启动mysql</a></li>
+<li><a href="#_获取mysql的临时密码">6.16. 获取mysql的临时密码：</a></li>
+<li><a href="#_登录mysql">6.17. 登录mysql</a></li>
+<li><a href="#_刷新配置">6.18. 刷新配置：</a></li>
+<li><a href="#_主服务器">6.19. 主服务器：</a></li>
+<li><a href="#_修改配置文件">6.20. 修改配置文件</a></li>
+<li><a href="#_从服务器">6.21. 从服务器</a></li>
+<li><a href="#_在从mysql中查看主从同步状态">6.22. 在从mysql中查看主从同步状态</a></li>
+<li><a href="#_再次查看同步状态">6.23. 再次查看同步状态：</a></li>
 </ul>
 </li>
 </ul>
@@ -1737,38 +1733,34 @@ ss -antpl|grep 8000</code></pre>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_epel镜像设置">4.1. EPEL镜像设置</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>[source, bash]
-yum install -y vim-enhanced wget curl yum-utils tree pwgen unzip expect xmlstarlet crudini</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    yum install -y vim-enhanced wget curl yum-utils tree pwgen unzip expect xmlstarlet crudini</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_更新yum软件包">4.2. 更新yum软件包</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>[source, bash]
-yum update -y</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    yum update -y</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_禁用selinux">4.3. 禁用SELINUX</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>[source, bash]
-echo SELINUX=disabled&gt;/etc/selinux/config
-echo SELINUXTYPE=targeted&gt;&gt;/etc/selinux/config</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    echo SELINUX=disabled&gt;/etc/selinux/config
+    echo SELINUXTYPE=targeted&gt;&gt;/etc/selinux/config</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_安装常用软件">4.4. 安装常用软件</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>[source, bash]
-yum install -y vim-enhanced wget curl yum-utils tree pwgen unzip expect xmlstarlet crudini</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    yum install -y vim-enhanced wget curl yum-utils tree pwgen unzip expect xmlstarlet crudini</code></pre>
 </div>
 </div>
 </div>
@@ -2426,7 +2418,7 @@ Jenkins Web暂时无法访问，详情见下文
 <h2 id="_mangodb">6. Mangodb</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_下载mongodb的docker镜像">6.1. 下载MongoDB的Docker镜像；</h3>
+<h3 id="_下载mongodb的docker镜像">6.1. 下载MongoDB的Docker镜像</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker pull mongo:4.2.5</code></pre>
@@ -2434,7 +2426,7 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_使用docker命令启动mongodb服务">6.2. 使用Docker命令启动MongoDB服务；</h3>
+<h3 id="_使用docker命令启动mongodb服务">6.2. 使用Docker命令启动MongoDB服务</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run -p 27017:27017 --name mongo \
@@ -2444,7 +2436,7 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mongodb设置账号">6.3. MongoDB设置账号：</h3>
+<h3 id="_mongodb设置账号">6.3. MongoDB设置账号</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run -p 27017:27017 --name mongo \
@@ -2454,7 +2446,7 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_进入容器中的mongodb客户端">6.4. 进入容器中的MongoDB客户端：</h3>
+<h3 id="_进入容器中的mongodb客户端">6.4. 进入容器中的MongoDB客户端</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker exec -it mongo mongo</code></pre>
@@ -2462,7 +2454,7 @@ Jenkins Web暂时无法访问，详情见下文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_创建一个账号用于连接">6.5. 创建一个账号用于连接：</h3>
+<h3 id="_创建一个账号用于连接">6.5. 创建一个账号用于连接</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">use admin
@@ -2544,20 +2536,19 @@ test    0.078GB
 </div>
 </div>
 <div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>include::book/07-Mysql主从/Mysql主从.asc[]z
+== Mysql主从</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_mysql主从">7. Mysql主从</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_环境要求">7.1. 环境要求</h3>
+<h3 id="_环境要求">6.11. 环境要求</h3>
 <div class="paragraph">
 <p>CentOS-Stream9</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_安装mysql_下载软件包">7.2. 安装mysql 下载软件包：</h3>
+<h3 id="_安装mysql_下载软件包">6.12. 安装mysql 下载软件包</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">yum install -y https://dev.mysql.com/get/ mysql80-community-release-el9-3.noarch.rpm</code></pre>
@@ -2565,7 +2556,7 @@ test    0.078GB
 </div>
 </div>
 <div class="sect2">
-<h3 id="_安装mysql">7.3. 安装mysql：</h3>
+<h3 id="_安装mysql">6.13. 安装mysql</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">yum install mysql-community-server</code></pre>
@@ -2573,7 +2564,7 @@ test    0.078GB
 </div>
 </div>
 <div class="sect2">
-<h3 id="_设为开机启动">7.4. 设为开机启动：</h3>
+<h3 id="_设为开机启动">6.14. 设为开机启动：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">systemctl enable mysqld
@@ -2582,7 +2573,7 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_启动mysql">7.5. 启动mysql：</h3>
+<h3 id="_启动mysql">6.15. 启动mysql</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">systemctl start mysqld</code></pre>
@@ -2590,7 +2581,7 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_获取mysql的临时密码">7.6. 获取mysql的临时密码：</h3>
+<h3 id="_获取mysql的临时密码">6.16. 获取mysql的临时密码：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">grep 'temporary password' /var/log/mysqld.log</code></pre>
@@ -2598,7 +2589,7 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_登录mysql">7.7. 登录mysql：</h3>
+<h3 id="_登录mysql">6.17. 登录mysql</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mysql -uroot -p</code></pre>
@@ -2616,7 +2607,7 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_刷新配置">7.8. 刷新配置：</h3>
+<h3 id="_刷新配置">6.18. 刷新配置：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">FLUSH PRIVILEGES;</code></pre>
@@ -2624,11 +2615,11 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_主服务器">7.9. 主服务器：</h3>
+<h3 id="_主服务器">6.19. 主服务器：</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_修改配置文件">7.10. 修改配置文件</h3>
+<h3 id="_修改配置文件">6.20. 修改配置文件</h3>
 <div class="paragraph">
 <p>配置文件默认在/etc/my.cnf下。
 <mark> 同一局域网内注意要唯一
@@ -2673,9 +2664,9 @@ GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_从服务器">7.11. 从服务器</h3>
+<h3 id="_从服务器">6.21. 从服务器</h3>
 <div class="paragraph">
-<p>在从服务器中/etc/my.cnf下配置中新增：
+<p>在从服务器中/etc/my.cnf下配置中新增
 <mark> 设置server_id,注意要唯一
 server-id=101
 </mark> 开启二进制日志功能，以备Slave作为其它Slave的Master时使用
@@ -2716,7 +2707,7 @@ master_connect_retry：如果连接失败，重试的时间间隔，单位是秒
 </div>
 </div>
 <div class="sect2">
-<h3 id="_在从mysql中查看主从同步状态">7.12. 在从mysql中查看主从同步状态：</h3>
+<h3 id="_在从mysql中查看主从同步状态">6.22. 在从mysql中查看主从同步状态</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">show slave status \G;</code></pre>
@@ -2733,7 +2724,7 @@ master_connect_retry：如果连接失败，重试的时间间隔，单位是秒
 </div>
 </div>
 <div class="sect2">
-<h3 id="_再次查看同步状态">7.13. 再次查看同步状态：</h3>
+<h3 id="_再次查看同步状态">6.23. 再次查看同步状态：</h3>
 <div class="paragraph">
 <p>show slave status \G;</p>
 </div>
@@ -2744,7 +2735,7 @@ master_connect_retry：如果连接失败，重试的时间间隔，单位是秒
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-10-09 14:54:29 +0800
+Last updated 2023-10-10 14:40:08 +0800
 </div>
 </div>
 <script src="js/highlight.min.js"></script>
