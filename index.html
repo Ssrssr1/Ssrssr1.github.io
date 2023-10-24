@@ -894,13 +894,11 @@ p { margin-bottom: 1.25rem; }
 </li>
 <li><a href="#_同一局域网内注意要唯一">8. 同一局域网内注意要唯一</a>
 <ul class="sectlevel2">
-<li><a href="#_重启之后进入mysql">8.1. 重启之后进入mysql</a></li>
-<li><a href="#_在master数据库创建数据同步用户授予用户_slave_replication_slave权限和replication_client权限用于在主从库之间同步数据">8.2. 在master数据库创建数据同步用户，授予用户 slave REPLICATION SLAVE权限和REPLICATION CLIENT权限，用于在主从库之间同步数据。</a></li>
-<li><a href="#_语句中的代表所有服务器都可以使用这个用户如果想指定特定的ip将改成ip即可">8.3. 语句中的%代表所有服务器都可以使用这个用户，如果想指定特定的ip，将%改成ip即可。</a></li>
-<li><a href="#_查看主mysql的状态">8.4. 查看主mysql的状态：</a></li>
-<li><a href="#_记录下file和position的值并且不进行其他操作以免引起position的变化">8.5. 记录下File和Position的值，并且不进行其他操作以免引起Position的变化。</a></li>
-<li><a href="#_从服务器">8.6. 从服务器</a></li>
-<li><a href="#_在从服务器中etcmy_cnf下配置中新增">8.7. 在从服务器中/etc/my.cnf下配置中新增</a></li>
+<li><a href="#_语句中的代表所有服务器都可以使用这个用户如果想指定特定的ip将改成ip即可">8.1. 语句中的%代表所有服务器都可以使用这个用户，如果想指定特定的ip，将%改成ip即可。</a></li>
+<li><a href="#_查看主mysql的状态">8.2. 查看主mysql的状态：</a></li>
+<li><a href="#_记录下file和position的值并且不进行其他操作以免引起position的变化">8.3. 记录下File和Position的值，并且不进行其他操作以免引起Position的变化。</a></li>
+<li><a href="#_从服务器">8.4. 从服务器</a></li>
+<li><a href="#_在从服务器中etcmy_cnf下配置中新增">8.5. 在从服务器中/etc/my.cnf下配置中新增</a></li>
 </ul>
 </li>
 <li><a href="#_设置server_id注意要唯一">9. 设置server_id,注意要唯一</a></li>
@@ -908,13 +906,28 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_relay_log配置中继日志">11. relay_log配置中继日志</a></li>
 <li><a href="#_修改配置后需要重启才能生效">12. 修改配置后需要重启才能生效：</a>
 <ul class="sectlevel2">
-<li><a href="#_重启之后进入mysql_2">12.1. 重启之后进入mysql：</a></li>
+<li><a href="#_重启之后进入mysql">12.1. 重启之后进入mysql：</a></li>
 <li><a href="#_部分参数解释">12.2. 部分参数解释</a></li>
 <li><a href="#_在从mysql中查看主从同步状态">12.3. 在从mysql中查看主从同步状态</a></li>
 <li><a href="#_再次查看同步状态">12.4. 再次查看同步状态：</a></li>
 </ul>
 </li>
-<li><a href="#_kafka">13. Kafka</a></li>
+<li><a href="#_kafka">13. Kafka</a>
+<ul class="sectlevel2">
+<li><a href="#_系统要求">13.1. 系统要求</a></li>
+<li><a href="#_下载kafka_release_并解压">13.2. 下载Kafka release 并解压</a></li>
+<li><a href="#_进入kafka_并运行zookeeper_服务">13.3. 进入Kafka 并运行zookeeper 服务</a></li>
+<li><a href="#_在另一终端运行kafka_server">13.4. 在另一终端运行kafka Server</a></li>
+<li><a href="#_查看内容">13.5. 查看内容</a></li>
+<li><a href="#_写一个简单的消息">13.6. 写一个简单的消息</a></li>
+<li><a href="#_另一终端接收消息">13.7. 另一终端接收消息</a></li>
+<li><a href="#_写文件操作导入jar包并写入内容">13.8. 写文件操作，导入jar包，并写入内容</a></li>
+<li><a href="#_建立连接">13.9. 建立连接</a></li>
+<li><a href="#_查看文件内容">13.10. 查看文件内容</a></li>
+<li><a href="#_查看文件详情">13.11. 查看文件详情</a></li>
+<li><a href="#_新增一段信息到文件里">13.12. 新增一段信息到文件里</a></li>
+</ul>
+</li>
 <li><a href="#_wordpress">14. WordPress</a>
 <ul class="sectlevel2">
 <li><a href="#_环境要求_2">14.1. 环境要求</a></li>
@@ -2671,38 +2684,38 @@ systemctl daemon-reload</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>server-id=100
-<mark> 开启二进制日志功能，可以随便取（关键）
+## 开启二进制日志功能，可以随便取（关键）
 log-bin=mysql-bin
-</mark># 修改配置后需要重启才能生效：</p>
+修改配置后需要重启才能生效：</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">service mysql restart</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_重启之后进入mysql">8.1. 重启之后进入mysql</h3>
+<div class="paragraph">
+<p>重启之后进入mysql</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mysql -uroot -p</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>在master数据库创建数据同步用户，授予用户 slave REPLICATION SLAVE权限和REPLICATION CLIENT权限，用于在主从库之间同步数据。</p>
 </div>
-<div class="sect2">
-<h3 id="_在master数据库创建数据同步用户授予用户_slave_replication_slave权限和replication_client权限用于在主从库之间同步数据">8.2. 在master数据库创建数据同步用户，授予用户 slave REPLICATION SLAVE权限和REPLICATION CLIENT权限，用于在主从库之间同步数据。</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">CREATE USER 'slave'@'%' IDENTIFIED BY '@#$Rfg345634523rft4fa';
 GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';</code></pre>
 </div>
 </div>
-</div>
 <div class="sect2">
-<h3 id="_语句中的代表所有服务器都可以使用这个用户如果想指定特定的ip将改成ip即可">8.3. 语句中的%代表所有服务器都可以使用这个用户，如果想指定特定的ip，将%改成ip即可。</h3>
+<h3 id="_语句中的代表所有服务器都可以使用这个用户如果想指定特定的ip将改成ip即可">8.1. 语句中的%代表所有服务器都可以使用这个用户，如果想指定特定的ip，将%改成ip即可。</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_查看主mysql的状态">8.4. 查看主mysql的状态：</h3>
+<h3 id="_查看主mysql的状态">8.2. 查看主mysql的状态：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">show master status;</code></pre>
@@ -2710,15 +2723,15 @@ GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_记录下file和position的值并且不进行其他操作以免引起position的变化">8.5. 记录下File和Position的值，并且不进行其他操作以免引起Position的变化。</h3>
+<h3 id="_记录下file和position的值并且不进行其他操作以免引起position的变化">8.3. 记录下File和Position的值，并且不进行其他操作以免引起Position的变化。</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_从服务器">8.6. 从服务器</h3>
+<h3 id="_从服务器">8.4. 从服务器</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_在从服务器中etcmy_cnf下配置中新增">8.7. 在从服务器中/etc/my.cnf下配置中新增</h3>
+<h3 id="_在从服务器中etcmy_cnf下配置中新增">8.5. 在从服务器中/etc/my.cnf下配置中新增</h3>
 
 </div>
 </div>
@@ -2762,7 +2775,7 @@ GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_重启之后进入mysql_2">12.1. 重启之后进入mysql：</h3>
+<h3 id="_重启之后进入mysql">12.1. 重启之后进入mysql：</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mysql -uroot -p
@@ -2813,16 +2826,145 @@ master_connect_retry：如果连接失败，重试的时间间隔，单位是秒
 <div class="sect1">
 <h2 id="_kafka">13. Kafka</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_系统要求">13.1. 系统要求</h3>
 <div class="paragraph">
-<p>Unresolved directive in book/08-Kafka/Kafka.asc - include::sections/01-下载mysql.asc[]</p>
+<p>CentOS-Stream9</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_下载kafka_release_并解压">13.2. 下载Kafka release 并解压</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget https://dlcdn.apache.org/kafka/3.5.0/kafka_2.13-3.5.0.tgz
+tar -xzf kafka_2.13-3.5.0.tgz</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_进入kafka_并运行zookeeper_服务">13.3. 进入Kafka 并运行zookeeper 服务</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd kafka_2.13-3.5.0
+bin/zookeeper-server-start.sh config/zookeeper.properties</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_在另一终端运行kafka_server">13.4. 在另一终端运行kafka Server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">bin/kafka-server-start.sh config/server.properties</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_查看内容">13.5. 查看内容</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Unresolved directive in book/08-Kafka/Kafka.asc - include::sections/02-主服务器.asc[]</p>
+<p>输出</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Topic: quickstart-events        TopicId: NPmZHyhbR9y00wMglMH2sg PartitionCount: 1       ReplicationFactor: 1	Configs:
+    Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_写一个简单的消息">13.6. 写一个简单的消息</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+This is my first event
+This is my second event</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_另一终端接收消息">13.7. 另一终端接收消息</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Unresolved directive in book/08-Kafka/Kafka.asc - include::sections/03-从服务器.asc[]</p>
+<p>输出</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">This is my first event
+This is my second event</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_写文件操作导入jar包并写入内容">13.8. 写文件操作，导入jar包，并写入内容</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">echo "plugin.path=libs/connect-file-3.5.0.jar"
+echo -e "foo\nbar" &gt; test.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>另一终端输出</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">&gt; echo foo&gt; test.txt
+&gt; echo bar&gt;&gt; test.txt</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_建立连接">13.9. 建立连接</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">bin/connect-standalone.sh config/connect-standalone.properties config/connect-file-source.properties config/connect-file-sink.properties</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_查看文件内容">13.10. 查看文件内容</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">more test.sink.txt</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_查看文件详情">13.11. 查看文件详情</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic connect-test --from-beginning</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>终端输出</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{"schema":{"type":"string","optional":false},"payload":"foo"}
+{"schema":{"type":"string","optional":false},"payload":"bar"}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_新增一段信息到文件里">13.12. 新增一段信息到文件里</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">echo Another line&gt;&gt; test.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>另一终端会及时接受新消息</p>
 </div>
 <div style="page-break-after: always;"></div>
+</div>
 </div>
 </div>
 <div class="sect1">
